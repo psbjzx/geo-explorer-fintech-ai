@@ -1,0 +1,110 @@
+{
+  "dados": {
+    "nome": "Analytics, Modelagem Dimensional e Power BI",
+    "carga_horaria": 60,
+    "modulos": [
+      "1. Consultas Analíticas e Otimização em SQL",
+      "2. Modelagem Dimensional com Star Schema (Fato e Dimensão)",
+      "3. Inteligência de Tempo e Medidas Avançadas em DAX",
+      "4. Governança de Dados e Storytelling em Dashboards"
+    ],
+    "desafios": {
+      "iniciante": {
+        "titulo": "Agregação Trimestral de Vendas",
+        "descricao": "Escreva uma query SQL ou expressão DAX que calcule o total de vendas agrupado por trimestre, filtrando apenas transações com status 'Aprovado'.",
+        "dica": "Utilize funções de inteligência de tempo como TOTALQTD ou DATEPART(QUARTER, data)."
+      },
+      "intermediario": {
+        "titulo": "Modelagem Star Schema para Crédito",
+        "descricao": "Estruture o esquema de uma tabela Fato_OperacoesCredito e três dimensões (Dim_Cliente, Dim_Tempo, Dim_Produto) garantindo integridade referencial e chaves substitutas (Surrogate Keys).",
+        "dica": "Mantenha métricas numéricas e chaves estrangeiras na tabela Fato e atributos descritivos nas Dimensões."
+      },
+      "avancado": {
+        "titulo": "Análise de Liquidez e Variação YoY",
+        "descricao": "Desenvolva uma medida que calcule o Índice de Liquidez Corrente dinâmico e a variação percentual Year-over-Year (YoY) do capital de giro líquido.",
+        "dica": "Combine CALCULATE com SAMEPERIODLASTYEAR e trate divisões por zero com DIVIDE()."
+      }
+    }
+  },
+  "python": {
+    "nome": "Python para Engenharia Financeira e Automação",
+    "carga_horaria": 50,
+    "modulos": [
+      "1. Manipulação Avançada de Strings e Estruturas de Dados",
+      "2. Parsing de Transações Financeiras e Deduplicação de Listas",
+      "3. Tratamento de Exceções, Decoradores e Tipagem Estática",
+      "4. Testes Automatizados e Integração de APIs"
+    ],
+    "desafios": {
+      "iniciante": {
+        "titulo": "Deduplicação de Transações Bancárias",
+        "descricao": "Crie uma função em Python que receba uma lista de IDs de transações financeiras contendo duplicatas e retorne uma nova lista ordenada apenas com valores únicos, preservando a performance.",
+        "dica": "Explore o uso de conjuntos (set) combinados com a função sorted()."
+      },
+      "intermediario": {
+        "titulo": "Parser de Extrato Financeiro Bruto",
+        "descricao": "Implemente um script que receba strings no formato 'DATA:2026-10-19|TIPO:CREDITO|VALOR:1540.50' e converta para uma lista de dicionários tipados, ignorando linhas corrompidas.",
+        "dica": "Use métodos de string (.split, .strip) dentro de blocos try/except ValueError."
+      },
+      "avancado": {
+        "titulo": "Validador de Carteira e Risco Atuarial",
+        "descricao": "Construa uma classe que receba fluxos de caixa e probabilidades de sobrevivência/inadimplência e calcule o Valor Presente Líquido (VPL) ajustado ao risco.",
+        "dica": "Utilize list comprehensions e valide argumentos usando módulos nativos ou dataclasses."
+      }
+    }
+  },
+  "devsecops": {
+    "nome": "Arquitetura Segura e DevSecOps no SDLC",
+    "carga_horaria": 45,
+    "modulos": [
+      "1. Segurança Integrada ao Ciclo de Vida do Software (Shift-Left)",
+      "2. Análise Estática (SAST), Dinâmica (DAST) e Gestão de Segredos",
+      "3. Prevenção de SQL Injection e Sanitização de Dados",
+      "4. Automação de Compliance e Auditoria em Pipelines CI/CD"
+    ],
+    "desafios": {
+      "iniciante": {
+        "titulo": "Caça a Credenciais Expostas (Secret Scanning)",
+        "descricao": "Crie uma função que analise o texto de um arquivo de configuração e detecte padrões de chaves de API ou senhas hardcoded usando expressões regulares.",
+        "dica": "Procure por padrões como 'API_KEY=', 'PASSWORD=' ou tokens longos em base64."
+      },
+      "intermediario": {
+        "titulo": "Blindagem contra SQL Injection",
+        "descricao": "Refatore uma função vulnerável que concatena strings diretamente em uma query SQL, substituindo por consultas parametrizadas (Prepared Statements).",
+        "dica": "Nunca use f-strings para injetar variáveis diretamente no comando SELECT/WHERE."
+      },
+      "avancado": {
+        "titulo": "Gate de Segurança Automatizado para Pipeline",
+        "descricao": "Desenvolva um script validador que leia um relatório JSON de vulnerabilidades de dependências (SCA) e interrompa o deploy (exit code 1) se houver falhas de severidade 'CRITICAL'.",
+        "dica": "Percorra o JSON validando a chave severity e utilize sys.exit(1) quando necessário."
+      }
+    }
+  },
+  "ia_generativa": {
+    "nome": "Engenharia de Prompt, LLMs e Protocolo MCP",
+    "carga_horaria": 40,
+    "modulos": [
+      "1. Arquitetura de Grandes Modelos de Linguagem (Transformers)",
+      "2. Técnicas Avançadas de Prompt Engineering (Few-Shot, CoT)",
+      "3. Desenvolvimento de Ferramentas com Model Context Protocol (MCP)",
+      "4. Desenvolvimento Assistido por Agentes (IBM Bob)"
+    ],
+    "desafios": {
+      "iniciante": {
+        "titulo": "Estruturação de Prompt com Chain-of-Thought",
+        "descricao": "Crie um template estruturado em Python que formate instruções de sistema exigindo que o modelo explique o passo a passo lógico antes de fornecer a resposta final.",
+        "dica": "Defina delimitadores claros para Contexto, Restrições, Formato de Saída e Raciocínio."
+      },
+      "intermediario": {
+        "titulo": "Criação de Tool para Servidor MCP",
+        "descricao": "Implemente uma função decorada para expor um calculador de indicadores financeiros a um agente externo via protocolo MCP.",
+        "dica": "Inclua docstrings detalhadas e Type Hints para que o LLM compreenda os parâmetros."
+      },
+      "avancado": {
+        "titulo": "Avaliador de Alucinação e Guardrails",
+        "descricao": "Construa um validador pós-processamento que verifique se a saída JSON gerada por um LLM contém todas as chaves obrigatórias do esquema esperado.",
+        "dica": "Tente fazer o parse com json.loads() e valide o conjunto de chaves obrigatórias."
+      }
+    }
+  }
+}
